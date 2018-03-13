@@ -27,11 +27,11 @@ const obj2 = { name: 'obj2' };
 const fooOBJ = foo.softBind(obj1);
 // 在这可能需要了解一下柯里化【柯南柯里化，了解一下：）】
 // fooOBJ函数其实就是bound，这里this为window，所以默认绑定obj1
-fooOBJ();
+fooOBJ(); // obj1
 
 obj2.foo = foo.softBind(obj1);
 // 根据上下文，这里this为obj2，所以绑定obj2
-obj2.foo();
+obj2.foo(); // obj2
 
 // this隐式丢失，软绑定obj1
-setTimeout(obj2.foo, 10);
+setTimeout(obj2.foo, 10); // obj1
