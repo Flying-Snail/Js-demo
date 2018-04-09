@@ -1,3 +1,5 @@
+/* 归并排序 */
+
 /* 外排 要求数组左边和右边都是有序的 */
 function externalSort(arr, l = 0, r = arr.length - 1) {
   // arr是传入左右有序的数组，l是开始的索引，r是结束的索引
@@ -24,7 +26,7 @@ function externalSort(arr, l = 0, r = arr.length - 1) {
   }
   return originArr;
 }
-/* 归并排序 */
+/* 归并排序过程 */
 function mergeSort(arr, l = 0, r = arr.length - 1) {
   if (!arr || r < 1 || l === r) {
     return arr;
@@ -38,6 +40,8 @@ function mergeSort(arr, l = 0, r = arr.length - 1) {
   externalSort(arr, l, r);
   return arr;
 }
+
+/* 测试 */
 // 一定对的方法
 function mustBeRight(arr) {
   return arr.sort((a, b) => a - b);
